@@ -9,6 +9,8 @@ b) Time complexity of O(n log n). Normally I'd assume nested loops are O(n^2), b
 c) This has a runtime complexity of O(n). As n increases, the number of recursion cycles increases linearly.
 
 ## Exercise II
+
+# Binary search method approach
 1.  Drop an egg from the middle floor of the floors being considered.
 
 2.  Did it break? Yes or no.

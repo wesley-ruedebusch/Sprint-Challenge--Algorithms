@@ -11,3 +11,12 @@ def count_th(word):
     # also the base case for when our function is done
     if len(word) < len(target):
         return 0
+     # check first 2 letters for target string
+    # if first 2 aren't the target
+    elif word[:2] != target:
+        # slice off the first letter
+        # and do the recursion dance
+        return count_th(word[1:])
+        # check first letter see target string
+    else:
+        return count_th(word[2:]) + 1    
