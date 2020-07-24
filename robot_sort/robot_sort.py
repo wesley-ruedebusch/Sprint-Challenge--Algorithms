@@ -96,10 +96,42 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+      # use light as boolean value
+        self.set_light_on()
+       #self.swap_item() later
+        while self.light_is_on():
+            # turn off light each iteration
+            # becomes the base case
+            self.set_light_off()
 
+            # if robot can move right, move it right
+            # traverse array and robot will work backwards
+            while self.can_move_right():
 
+                # move right 
+                self.move_right()
+
+                  
+            while self.can_move_left():
+                # swap items
+                # first time thru drops None
+                self.swap_item()
+                
+                # move left
+                self.move_left()
+
+                # compare items and swap if needed
+                if self.compare_item() == -1:
+                    self.swap_item()
+                    # toggle light on
+                    self.set_light_on()
+
+                
+                self.move_right()
+                self.swap_item()
+                self.move_left()
+
+                #should be refactored for efficacy, I beilive this is Linear O(n) since we are using an if satemanet inside of a while loop.
 if __name__ == "__main__":
     # Test our your implementation from the command line
     # with `python robot_sort.py`
